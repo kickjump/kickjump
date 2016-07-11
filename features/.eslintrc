@@ -1,0 +1,7 @@
+{
+  "extends": "../.eslintrc",
+  "rules": {
+    "new-cap": "off",
+    "func-names": "off"
+  }
+}
