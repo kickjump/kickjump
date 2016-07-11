@@ -3,10 +3,10 @@ const webdriverio = require('webdriverio');
 
 should();
 
-// const host = process.env.SELENIUM_HOST || '127.0.0.1';
+const host = process.env.SELENIUM_HOST || 'localhost';
 
 const options = {
-  // host,
+  host,
   desiredCapabilities: {
     browserName: 'chrome',
   },

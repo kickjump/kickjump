@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+
+  kickjump:
+    build: .
+    command: echo 'ready'
+    volumes:
+      - .:/kickjump
+    links:
+      - selenium_standalone
+    environment:
+      - SELENIUM_HOST=selenium_standalone
+
+  selenium_standalone:
+    ports:
+      - "4444:4444"
+    image: selenium/standalone-chrome:2.53.0
+    volumes:
+      - /dev/shm:/dev/shm
