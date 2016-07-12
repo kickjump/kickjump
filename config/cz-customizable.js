@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
 
 /* eslint-disable */
@@ -18,29 +16,17 @@ module.exports = {
 
 /* eslint-enable */
   scopes: [
-    {name: 'client'},
-    {name: 'server'},
-    {name: 'dashboard'},
-    {name: 'service-worker'},
-    {name: 'docker'},
-    {name: 'cli'},
-    {name: 'integration'},
-    {name: 'main'}
+    { name: 'client' },
+    { name: 'server' },
+    { name: 'dashboard' },
+    { name: 'service-worker' },
+    { name: 'docker' },
+    { name: 'cli' },
+    { name: 'integration' },
+    { name: 'main' },
   ],
 
-  // it needs to match the value for field type. Eg.: 'fix'
-  /*
-  scopeOverrides: {
-    fix: [
-      {name: 'merge'},
-      {name: 'style'},
-      {name: 'e2eTest'},
-      {name: 'unitTest'}
-    ]
-  },
-  */
-
   allowCustomScopes: true,
-  allowBreakingChanges: ['feat', 'fix']
+  allowBreakingChanges: ['feat', 'fix'],
 
 };
