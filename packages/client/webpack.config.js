@@ -48,10 +48,4 @@ module.exports = {
       loaders.json,
     ],
   },
-
-  externals: {
-    'react/lib/ReactContext': 'window',
-    'react/lib/ExecutionEnvironment': true,
-    'react/addons': true,
-  },
 };

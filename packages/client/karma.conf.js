@@ -55,7 +55,7 @@ module.exports = (config) => {
         'webpack',
         'sourcemap',
       ],
-      './src/**/!(*.test).(ts|js)': [
+      './src/**/!(*.spec).(ts|js)': [
         'sourcemap',
       ],
     },
@@ -66,7 +66,15 @@ module.exports = (config) => {
       devtool: 'inline-source-map',
       verbose: false,
       module: {
-        loaders: combinedLoaders(),
+        noParse: [
+          /\/sinon\.js/,
+        ],
+        loaders: combinedLoaders().concat([
+          {
+            test: /sinon(\\|\/)pkg(\\|\/)sinon\.js/,
+            loader: 'imports?define=>false,require=>false',
+          },
+        ]),
         postLoaders: config.singleRun
           ? [loaders.istanbulInstrumenter]
           : [],

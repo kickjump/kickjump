@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const sourceMap = process.env.TEST || process.env.NODE_ENV !== 'production'
   ? [new webpack.SourceMapDevToolPlugin({ filename: null, test: /\.tsx?$/ })]
@@ -12,9 +11,6 @@ const basePlugins = [
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   }),
   new webpack.NoErrorsPlugin(),
-  new CopyWebpackPlugin([
-    { from: 'src/assets', to: 'assets' },
-  ]),
 ].concat(sourceMap);
 
 const devPlugins = [];
