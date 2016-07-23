@@ -1,5 +1,5 @@
 import PageGrouping from './Grouping';
-import PageHistory from './History';
+import PageHistory from './Page';
 import { PageConfig } from '../interfaces/interfaces';
 
 describe('PageGrouping Class', () => {
@@ -43,5 +43,7 @@ describe('PageGrouping Class', () => {
       page.name.should.equal(overrideObject.name);
     });
   });
+
+
 
 });

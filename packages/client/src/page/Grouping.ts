@@ -1,6 +1,7 @@
-import { PageConfig, URLConfig, ActivatorConfig,
-         PageURLConfig } from '../interfaces/interfaces';
-import History from './History';
+import {
+   PageConfig, URLConfig, ActivatorConfig, PageURLConfig
+} from '../interfaces/interfaces';
+import History from './Page';
 import urlParser from './urlParser';
 
 
