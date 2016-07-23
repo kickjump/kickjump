@@ -1,4 +1,4 @@
-pushify
+kickjump
 =======
 
 ### Overview
@@ -12,7 +12,7 @@ This is an alpha release a.k.a _flirt, maybe date but certainly don't marry_. i.
 
 ### Demo
 
-You can see this project in action at **[here](https://pushify.io)**. Only the latest released version is available and during these early moments, it's just as likely to be broken as not.
+You can see this project in action at **[here](https://kickjump.io)**. Only the latest released version is available and during these early moments, it's just as likely to be broken as not.
 
 ### Getting Started
 
@@ -71,5 +71,5 @@ So welcome to the **pre MVP** release 😘
 For now just open up an issue and start hacking on the code. As things develop we'll make this a more formal process.
 
 
-**pushify**
+**kickjump**
 _Built with Love and Grace_
