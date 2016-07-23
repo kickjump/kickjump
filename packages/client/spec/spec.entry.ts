@@ -23,16 +23,14 @@ const testContext = (<{ context?: Function }>require)
  * coverage to run properly.
  */
 
-// testContext('../src/index.ts');
-require('../src/runner');
+require('../src/');
+
+
 /**
  * Load all test files
  */
 
 testContext.keys().forEach(key => {
-  // if (/runner\.ts$/.test(key)) {
-  //   testContext(key);
-  // }
   // Only catch the test files (don't duplicate src file loading)
   if (/\.spec\.ts$/.test(key)) { 
     testContext(key);

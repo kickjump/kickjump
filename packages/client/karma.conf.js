@@ -66,15 +66,7 @@ module.exports = (config) => {
       devtool: 'inline-source-map',
       verbose: false,
       module: {
-        noParse: [
-          /\/sinon\.js/,
-        ],
-        loaders: combinedLoaders().concat([
-          {
-            test: /sinon(\\|\/)pkg(\\|\/)sinon\.js/,
-            loader: 'imports?define=>false,require=>false',
-          },
-        ]),
+        loaders: combinedLoaders().concat([]),
         postLoaders: config.singleRun
           ? [loaders.istanbulInstrumenter]
           : [],

@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
-    "node": "registry:dt/node#6.0.0+20160709114037"
+    "node": "registry:dt/node#6.0.0+20160709114037",
+    "query-string": "registry:dt/query-string#3.0.0+20160331065456"
   },
   "devDependencies": {},
   "globalDevDependencies": {
@@ -10,5 +11,8 @@
     "promises-a-plus": "registry:dt/promises-a-plus#0.0.0+20160317120654",
     "sinon": "registry:dt/sinon#1.16.0+20160517064723",
     "sinon-chai": "registry:dt/sinon-chai#2.7.0+20160317120654"
+  },
+  "dependencies": {
+    "history": "registry:npm/history#2.0.0+20160607172317"
   }
 }

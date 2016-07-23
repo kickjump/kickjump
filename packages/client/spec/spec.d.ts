@@ -6,3 +6,6 @@ declare module NodeJS {
     should: Chai.Should;
   }
 }
+
+declare var expect: Chai.ExpectStatic;
+declare var sinon: Sinon.SinonStatic;
