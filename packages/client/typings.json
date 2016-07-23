@@ -1,7 +1,8 @@
 {
   "globalDependencies": {
     "node": "registry:dt/node#6.0.0+20160709114037",
-    "query-string": "registry:dt/query-string#3.0.0+20160331065456"
+    "query-string": "registry:dt/query-string#3.0.0+20160331065456",
+    "type-detect": "registry:dt/type-detect#0.1.2+20160317120654"
   },
   "devDependencies": {},
   "globalDevDependencies": {

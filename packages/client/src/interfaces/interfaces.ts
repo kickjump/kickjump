@@ -51,7 +51,7 @@ export type PageURLConfig = URLConfig | string;
  */
 export interface URLHistoryItem {
   timestamp: number; // Browser timestamp for when this was added
-  url: ParsedURL; // the
+  url: ParsedURL;
   type?: URLHistoryItemType;
 }
 
