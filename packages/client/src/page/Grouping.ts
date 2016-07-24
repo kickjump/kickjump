@@ -1,9 +1,11 @@
-import {
-   PageConfig, URLConfig, ActivatorConfig, PageURLConfig
-} from '../interfaces/interfaces';
-import History from './Page';
-import urlParser from './urlParser';
+import * as typeCheck from 'type-detect';
+import { getParams } from 'url-matcher';
 
+import {
+   PageConfig, URLConfig, ActivatorConfig, PageURLConfig, ParsedURL
+} from '../interfaces/interfaces';
+import Page from './Page';
+import urlParser from './urlParser';
 
 /**
  * @class PageGrouping
@@ -35,7 +37,7 @@ import urlParser from './urlParser';
 
 export default class PageGrouping implements PageConfig {
 
-  private history: History;
+  private page: Page;
 
   public id: number;
   public name: string;
@@ -48,9 +50,9 @@ export default class PageGrouping implements PageConfig {
    * @constructor
    */
 
-  constructor (config: PageConfig, history) {
+  constructor (config: PageConfig, page: Page) {
     this.initializePageConfig(config);
-    this.history = history;
+    this.page = page;
   }
 
 
@@ -67,6 +69,37 @@ export default class PageGrouping implements PageConfig {
     this.exclude = config.exclude;
     this.include = config.include;
     this.activators = config.activators;
+  }
+
+  /**
+   * @method checkURLs
+   *
+   * Loop through URLs to determine whether this page is a match
+   */
+  checkURLs(urls: PageURLConfig[]) {
+    return urls.reduce((previousValue: any, currentValue) => {
+      const params = this.checkURL(currentValue);
+      if (!previousValue) {
+        return params;
+      }
+
+      if (!params) {
+        return previousValue;
+      }
+
+      return Object.assign(previousValue, params);
+    }, null)
+  }
+
+  /**
+   * @method checkURL
+   *
+   * Determine whether the URL matches the current page.
+   */
+  checkURL(pattern: PageURLConfig) {
+    if (typeCheck(pattern) == 'string') {
+      return getParams(pattern as string, this.page.currentURL.simple);
+    }
   }
 
 

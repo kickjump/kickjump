@@ -78,7 +78,7 @@ export interface ActivatorConfig {
  */
 
 export interface URLConfig {
-  url: string;
+  url: string; // always simple awesome.com/hello
   query: Query;
   hash?: string;
   protocol?: string;

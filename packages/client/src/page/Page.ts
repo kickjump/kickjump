@@ -16,12 +16,13 @@ import urlParser from './urlParser';
  * The observable is updated every time the page URL changes and makes this URL object
  * available to all stream listeners.
  *
- * A class that tracks page state as an observable
+ * A class that tracks page state as an observable.
  */
 
 export default class Page {
 
   public observable: Observable<URLHistoryItem>;
+  public currentURL: ParsedURL;
 
   /**
    * @constructor
@@ -129,9 +130,10 @@ export default class Page {
   createObservable(): Observable<URLHistoryItem> {
     const callback = (observer): Function => {
       return (obj: any) => {
+        this.currentURL = Page.getCurrentURL();
         const urlHistoryItem: URLHistoryItem = {
           timestamp: Date.now(),
-          url: Page.getCurrentURL()
+          url: this.currentURL
         };
 
         observer.next(urlHistoryItem);

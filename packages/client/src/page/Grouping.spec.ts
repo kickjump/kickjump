@@ -2,7 +2,7 @@ import PageGrouping from './Grouping';
 import PageHistory from './Page';
 import { PageConfig } from '../interfaces/interfaces';
 
-describe('PageGrouping Class', () => {
+describe('PageGrouping', () => {
   let page: PageGrouping;
   let pageHistory: PageHistory;
   const testObject: PageConfig = {
