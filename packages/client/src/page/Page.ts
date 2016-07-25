@@ -32,6 +32,7 @@ export default class Page {
    */
 
   constructor() {
+    this.currentURL = Page.getCurrentURL();
     this.observable = this.createObservable();
   }
 

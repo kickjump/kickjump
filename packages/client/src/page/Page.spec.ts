@@ -22,6 +22,11 @@ describe('Page', () => {
     page.observable.should.exist;
   });
 
+  it('should have a current url at instantiation', () => {
+    page.currentURL.should.be.an('object');
+    page.currentURL.should.have.property('simple');
+  });
+
   describe('.getCurrentURL', () => {
     it('should return a ParsedURL object', () => {
       Page.getCurrentURL().should.have.property('simple');
