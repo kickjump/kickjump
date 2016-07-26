@@ -47,7 +47,7 @@ export default class Page {
    */
 
   static getCurrentURL(): ParsedURL {
-    return urlParser(document.URL);
+    return urlParser(Page.documentURL());
   }
 
 
@@ -138,16 +138,16 @@ export default class Page {
         };
 
         observer.next(urlHistoryItem);
-      }
-    }
+      };
+    };
 
     return Observable.create((observer) => {
       const cb = callback(observer);
       this.listenToPageChanges(cb);
 
       return () => {
-        this.stopListeningToPageChanges(cb)
-      }
+        this.stopListeningToPageChanges(cb);
+      };
     });
   }
 

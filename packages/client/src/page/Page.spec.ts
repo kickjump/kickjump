@@ -31,6 +31,12 @@ describe('Page', () => {
     it('should return a ParsedURL object', () => {
       Page.getCurrentURL().should.have.property('simple');
     });
+
+    it('should use the Page.documentURL as a proxy to document.URL', () => {
+      spy = sinon.spy(Page, 'documentURL');
+      Page.getCurrentURL();
+      spy.should.have.been.calledOnce;
+    });
   });
 
   describe('.documentURL', () => {
@@ -39,7 +45,7 @@ describe('Page', () => {
     });
 
     it('should allow overriding', () => {
-      const override: string = 'https://test.com/awesome'
+      const override: string = 'https://test.com/awesome';
       Page.documentURL(override).should.equal(override);
     });
   });

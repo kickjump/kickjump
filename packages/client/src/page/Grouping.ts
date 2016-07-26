@@ -1,5 +1,5 @@
 import * as typeCheck from 'type-detect';
-import { getParams } from 'url-matcher';
+import { getParams } from 'url-matcher/modules';
 
 import {
    PageConfig, URLConfig, ActivatorConfig, PageURLConfig, ParsedURL
@@ -88,7 +88,7 @@ export default class PageGrouping implements PageConfig {
       }
 
       return Object.assign(previousValue, params);
-    }, null)
+    }, null);
   }
 
   /**
@@ -97,7 +97,7 @@ export default class PageGrouping implements PageConfig {
    * Determine whether the URL matches the current page.
    */
   checkURL(pattern: PageURLConfig) {
-    if (typeCheck(pattern) == 'string') {
+    if (typeCheck(pattern) === 'string') {
       return getParams(pattern as string, this.page.currentURL.simple);
     }
   }
