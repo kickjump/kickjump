@@ -1,4 +1,4 @@
-declare module 'url-matcher' {
+declare module 'url-matcher/modules' {
   interface PatternMatcher {
     remainingPathName: string;
     paramNames: string[];
