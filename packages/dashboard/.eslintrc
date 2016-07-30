@@ -1,12 +1,19 @@
 {
   "parser"  : "babel-eslint",
+  "settings": {
+    "webpack": {
+      "config": "./build/webpack.config.js"
+    }
+  },
   "extends" : [
     "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   "plugins": [
     "babel",
     "react",
-    "promise"
+    "promise",
   ],
   "env"     : {
     "browser" : true
