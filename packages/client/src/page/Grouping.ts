@@ -91,11 +91,13 @@ export default class PageGrouping implements PageConfig {
     }, null);
   }
 
+
   /**
    * @method checkURL
    *
    * Determine whether the URL matches the current page.
    */
+
   checkURL(pattern: PageURLConfig) {
     if (typeCheck(pattern) === 'string') {
       return getParams(pattern as string, this.page.currentURL.simple);
