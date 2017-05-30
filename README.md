@@ -1,6 +1,8 @@
 kickjump
 =======
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kickjump/kickjump.svg)](https://greenkeeper.io/)
+
 ### Overview
 
 Easily deploy a server that provides configurable, beautiful analytics for your progressive web app.
